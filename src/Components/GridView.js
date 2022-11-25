@@ -4,20 +4,22 @@ import Product from './Product'
 
 const GridView = ({products}) => {
   return (
-    <Wrapper>
-       {
+    <Wrapper className='section'>
+     <div className='container grid grid-three-column'>
+     {
         products.map((curElem)=>{
             return <Product 
             key={curElem.id}
             {...curElem} />
         })
        }
+     </div>
+     
     </Wrapper>
   )
 }
 const Wrapper = styled.section`
  padding: 9rem 0;
- background-color: ${({theme})=> theme.colors.bg};
 
  .container{
     max-width: 120rem;

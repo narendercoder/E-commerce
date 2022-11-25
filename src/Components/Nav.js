@@ -4,10 +4,12 @@ import styled from "styled-components";
 import {FiShoppingCart} from "react-icons/fi";
 import {CgMenu, CgClose} from "react-icons/cg"
 import { useState } from "react";
+import { useCartContext } from "../Context/Cart_Context";
 
 const Nav = () => {
+const [menuIcon, setMenuIcon] = useState(false);
+const {total_item} = useCartContext();
 
-const [menuIcon, setMenuIcon] = useState(false)
   return (
     <Navbar>
       <div className={menuIcon ? "navbar active" : "navbar"}>
@@ -37,7 +39,7 @@ const [menuIcon, setMenuIcon] = useState(false)
           <li>
             <NavLink to="/cart" className="navbar-link cart-trolley--link">
               <FiShoppingCart className="cart-trolley" />
-              <span className="cart-total--item">10</span>
+              <span className="cart-total--item">{total_item}</span>
             </NavLink>
           </li>
 
@@ -110,10 +112,11 @@ const Navbar = styled.nav`
             height: 2.4rem;
             position: absolute;
             background-color: #000;
-            color: #000;
+            color: #fff;
             border-radius: 50%;
-            dispLay: grid;
-            place-items: center;
+            dispLay: flex;
+            justify-content: center;
+            align-items: center;
             top: -20%;
             left: 70%;
             background-color: ${({ theme }) => theme.colors.helper};

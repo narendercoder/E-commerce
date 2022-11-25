@@ -8,11 +8,11 @@ function Products() {
 
   return <Wrapper>
     <div className="container">
-      <div className="row">
-       <div className="col-lg-4">
+      <div className="row ">
+       <div className="col-lg-3">
        <FilterSection/>
        </div>
-       <section className="product-view--sort col-lg-8">
+       <section className="product-view--sort col-lg-9">
         <div className="row">
           <div className="sort-filter col-lg-12">
             <Sort />

@@ -40,16 +40,17 @@ const SingleProducts = () => {
   if (isSingleLoading) {
     return <div className="page_loading">Loading...</div>;
   }
-
   return (
     <Wrapper>
       <PageNavigation title={name} />
       <Container className="container">
         <div className="grid grid-two-column">
+        {/* product Images  */}
           <div className="product-images">
           <MyImage imgs={image} />
           </div>
           
+           {/* product data  */}
           <div className="product-data">
           <h2>{name}</h2>
           <Star stars={stars} reviews={reviews} />
@@ -98,10 +99,11 @@ const SingleProducts = () => {
             </p>
             <p>Brand : <span>{company}</span>
             </p>
+            <p>Category :<span>{category}</span> </p>
           </div>
           <hr />
           {stock > 0  && <AddToCart product={singleProduct}/>}
-
+         
         </div>
         </div>
         

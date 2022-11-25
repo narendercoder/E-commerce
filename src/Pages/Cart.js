@@ -1,11 +1,98 @@
 import styled from "styled-components";
+import CartItem from "../Components/CartItem";
+import { useCartContext } from "../Context/Cart_Context";
+import { Button } from "../Styles/Button";
+import { NavLink } from "react-router-dom";
+import FormatPrice from "../Components/FormatPrice";
 
 function Cart() {
-    return <Wrapper></Wrapper>;
+  const { cart, clearCart, total_price, shipping_fee } = useCartContext();
+
+  return (
+    <Wrapper>
+      <div className="container">
+        <div className="cart_heading grid grid-five-column">
+          <p>Item</p>
+          <p className="cart-hide">Price</p>
+          <p>Quantity</p>
+          <p className="cart-hide">Subtotal</p>
+          <p>Remove</p>
+        </div>
+        <hr />
+        <div className="cart-item">
+          {cart.length === 0 ? (
+            <div className="empty-cart-section d-flex flex-column justify-content-center align-items-center">
+              <img
+                className="empty-cart-img"
+                src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90"
+                alt=""
+              />
+              <p className="empty-cart-title mt-3">Your cart is empty!</p>
+              <p className="empty-cart-des">Add items to it now.</p>
+              <div className="cart-two-button">
+                <NavLink to="/products">
+                  <Button>continue Shopping</Button>
+                </NavLink>
+              </div>
+            </div>
+          ) : (
+            cart.map((curElem) => {
+              return (
+                <>
+                  <CartItem key={curElem.id} {...curElem} />
+                </>
+              );
+            })
+          )}
+        </div>
+
+        {cart.length === 0 ? (
+          <>
+
+          </>
+        ) : (
+          <>
+            <hr />
+            <div className="cart-two-button">
+              <NavLink to="/products">
+                <Button>continue Shopping</Button>
+              </NavLink>
+              <Button className="btn-clear" onClick={clearCart}>
+                clear Cart
+              </Button>
+            </div>
+          </>
+        )}
+
+        <div className="order-total--amount">
+          <div className="order-total--subdata">
+            <div>
+              <p>Subtotal</p>
+              <p><FormatPrice price={total_price}/></p>
+            </div>
+            <div>
+              <p>Shipping Fee:</p>
+              <p><FormatPrice price={shipping_fee}/></p>
+            </div>
+            <hr />
+            <div>
+              <p>Order total</p>
+              <p><FormatPrice price={total_price + shipping_fee}/></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Wrapper>
+  );
 }
 
 const Wrapper = styled.section`
   padding: 9rem 0;
+
+  .container {
+    max-width: 120rem;
+    margin: 0 auto;
+  }
   .grid-four-column {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -26,6 +113,20 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
+
+    .empty-cart-section {
+      .empty-cart-img {
+        height: 162px;
+      }
+      .empty-cart-title {
+        font-size: 1.8rem;
+        font-weight: 900;
+      }
+      .empty-cart-des {
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+    }
   }
   .cart-user--profile {
     display: flex;
@@ -158,5 +259,4 @@ const Wrapper = styled.section`
   }
 `;
 
-
-export default Cart
+export default Cart;

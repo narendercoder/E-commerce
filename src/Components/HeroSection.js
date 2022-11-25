@@ -7,40 +7,41 @@ function HeroSection({ myData }) {
   const { name } = myData;
 
   return (
-    <Wrapper >
+    <Wrapper>
       <div className="container">
-      <div className="grid grid-two-column">
-        <div className="hero-section-data">
-          <p className="intro-data">Welcome to</p>
-          <h1>{name}</h1>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-            magni, adipisci totam quas consequatur dignissimos tempora incidunt
-            a ipsa fugit facere, obcaecati laborum? Dolor itaque eius
-            perferendis nam, dignissimos voluptatum.
-          </p>
-          <NavLink>
-            <Button></Button>
-          </NavLink>
-        </div>
-        <div className="hero-section-image">
-          <figure>
-            <img
-              src="images/ecommerce.jpg"
-              alt="hero-section-img"
-              className="img-style"
-            />
-          </figure>
+        <div className="grid grid-two-column">
+          <div className="hero-section-data">
+            <p className="intro-data">Welcome to</p>
+            <h1>{name}</h1>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam magni, adipisci totam quas consequatur dignissimos
+              tempora incidunt a ipsa fugit facere, obcaecati laborum? Dolor
+              itaque eius perferendis nam, dignissimos voluptatum.
+            </p>
+            <NavLink to="/products">
+              <Button>Shop Now</Button>
+            </NavLink>
+          </div>
+          <div className="hero-section-image">
+            <figure>
+              <img
+                src="products/product-38.png"
+                alt="hero-section-img"
+                className="img-style"
+              />
+            </figure>
+          </div>
         </div>
       </div>
-      </div>
-      
     </Wrapper>
   );
 }
+
 const Wrapper = styled.section`
   padding: 9rem 0;
-  /* background-color: #f9f3f0; */
+  background-color: #f9f3f0;
+  overflow: hidden;
 
   img {
     min-width: 10rem;
@@ -67,16 +68,19 @@ const Wrapper = styled.section`
   }
   figure {
     position: relative;
+    z-index: 3;
 
     &::after {
       content: "";
       width: 60%;
-      height: 80%;
-      background-color: rgba(53, 119, 240, 0.4);
+      height: 160%;
+      transform: rotate(30deg);
+      background: linear-gradient( 90deg, #f9f3f0, #ffd9cc);
       position: absolute;
-      left: 50%;
+      left: 20%;
       top: -5rem;
       z-index: -1;
+      border-radius: 20px
     }
   }
   .img-style {

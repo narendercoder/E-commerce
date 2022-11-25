@@ -7,19 +7,19 @@ function Trusted() {
       <h3>Trusted By 1000+ Companies</h3>
       <div className="brand-section-slider">
         <div className="slide">
-          <img src="" alt="trusted-brands" />
+          <img src="./company/google.png" alt="trusted-brands" />
         </div>
         <div className="slide">
-          <img src="" alt="trusted-brands" />
+          <img src="./company/microsoft.png" alt="trusted-brands" />
         </div>
         <div className="slide">
-          <img src="" alt="trusted-brands" />
+          <img src="./company/intel.png" alt="trusted-brands" />
         </div>
         <div className="slide">
-          <img src="" alt="trusted-brands" />
+          <img src="./company/dell.png" alt="trusted-brands" />
         </div>
         <div className="slide">
-          <img src="" alt="trusted-brands" />
+          <img src="./company/asus.png" alt="trusted-brands" />
         </div>
       </div>
     </div>
