@@ -1,21 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import { FaStar, FaStarHalfAlt } from "react-icons/fa";
-import { AiOutlineStar } from "react-icons/ai";
+import { FaRegStar, FaStar, FaStarHalfAlt} from "react-icons/fa";
 
-const Star = ({ star, reviews }) => {
+const Star = ({ stars, reviews }) => {
   const ratingStar = Array.from({ length: 5 }, (elem, index) => {
     let number = index + 0.5;
     return (
-      <span key={index}>
-        {star >= index + 1 ? (
+      <>
+      <span key={index} className="product-rating">
+        {
+          stars >= index + 1 ? (
           <FaStar className="icon" />
-        ) : star >= number ? (
+        ) : stars >= number ? (
           <FaStarHalfAlt className="icon" />
         ) : (
-          <AiOutlineStar className="icon" />
+          <FaRegStar className="icon" />
         )}
       </span>
+
+     </>
+      
     );
   });
   return (
@@ -34,9 +38,9 @@ const Wrapper = styled.section`
     align-items: center;
     justify-content: flex-start;
 
-    .icon {
+    .product-rating .icon {
       font-size: 2rem;
-      color: orange;
+      color: #ffa500 !important;
     }
     .empty-icon {
       font-size: 2.6rem;

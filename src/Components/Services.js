@@ -70,7 +70,7 @@ function Services() {
 }
 
 const Wrapper = styled.section`
-  padding: 9rem 0 9rem 0;
+  padding: 9rem 0 0 0;
   .service-section-slider {
     width: 100%;
     height: 100%;
@@ -99,6 +99,12 @@ const Wrapper = styled.section`
         border-radius: 10px;
         background: ${({ theme }) => theme.colors.bg};
         padding: 20px;
+        .banner-text h3{
+          color: #242424;
+          font-size: 18px;
+          font-weight: 600;
+          margin-bottom: 5px;
+        }
       }
     
   }
@@ -117,7 +123,7 @@ const Wrapper = styled.section`
     padding: 2rem;
     border-radius: 50%;
     background-color: #fff;
-    color: #3bb77e;
+    color: #3577f0;
   }
 `;
 export default Services;

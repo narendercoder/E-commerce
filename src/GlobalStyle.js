@@ -35,24 +35,36 @@ body::-webkit-scrollbar-thumb {
 h1,
 h2,
 h3,
-h4,p {
+h4,h5,p {
   font-family: 'Quicksand', sans-serif;
 }
 h1 {
   color: ${({ theme }) => theme.colors.heading};
-  font-size: 6rem;
+  font-size: 4.8rem;
   font-weight: 700;
 }
  h2 {
    color: ${({ theme }) => theme.colors.heading};
-   font-size: 4.4rem;
+   font-size: 4rem;
    font-weight: 300;
    white-space: normal;
   
   }
 h3 {
-  font-size: 1.8rem;
+  font-size: 3.2rem;
   font-weight: 500;
+}
+h4{
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+h5{
+  font-size: 2rem;
+  font-weight: 500;
+}
+h6{
+  font-size: 1.6rem;
+  font-weight: 500
 }
 p, button {
   color: ${({ theme }) => theme.colors.text};
@@ -61,6 +73,7 @@ p, button {
   font-weight:500;
 }
 a {
+  color: white;
   text-decoration: none;
   cursor: pointer;
 }
@@ -69,7 +82,6 @@ li {
 }
 
 .container {
-  max-width: 132rem;
   margin: 0 auto;
 }
 
@@ -122,12 +134,17 @@ li {
       }
     }
 input, textarea{
+    font-size: 1.6rem;
     max-width: 50rem;
     color: ${({ theme }) => theme.colors.black};
     padding: 1.6rem 2.4rem;
     border: 1px solid ${({ theme }) => theme.colors.border};
     text-transform: uppercase;
     box-shadow: ${({ theme }) => theme.colors.shadowSupport};
+}
+select{
+  font-size: 1.6rem;
+  text-transform: uppercase;
 }
     input[type="submit"]{
     max-width: 16rem;

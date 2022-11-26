@@ -3,6 +3,7 @@ import { FaTrash } from "react-icons/fa";
 import FormatPrice from "../Components/FormatPrice"
 import { useCartContext } from "../Context/Cart_Context";
 import CartAmountToggle from "./CartAmountToggle";
+import {NavLink} from "react-router-dom";
 
 const CartItem = ({ id, name, image, color, price, amount }) => {
    const { removeItem, setDecrease, setIncrease } = useCartContext();
@@ -12,13 +13,18 @@ const CartItem = ({ id, name, image, color, price, amount }) => {
     <div className="cart_heading grid grid-five-column">
       <div className="cart-image--name">
         <div>
+        <NavLink to={`/singleproduct/${id.split("#000000")[0]}`}>
           <figure>
             <img src={image} alt={id} />
           </figure>
+        </NavLink>
         </div>
 
         <div>
-          <p>{name}</p>
+        <NavLink to={`/singleproduct/${id.split("#000000")[0]}`}>
+        <p>{name}</p>
+        </NavLink>
+          
           <p className="color-div">
             <span>Color</span>
             <span

@@ -27,6 +27,9 @@ function Products() {
   </Wrapper>;
 }
 const Wrapper = styled.section`
+.container{
+  max-width: 132rem;
+}
   .grid-filter-column {
     grid-template-columns: 0.2fr 1fr;
   }

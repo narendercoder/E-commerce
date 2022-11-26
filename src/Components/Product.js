@@ -14,7 +14,7 @@ const Product = (curElem) => {
             </figure>
             <div className="card-data">
                 <div className="card-data-flex">
-                    <h3>{name}</h3>
+                    <h3 className="card-data--title">{name}</h3>
                     <p className="card-data--price">{<FormatePrice price={price}/>}</p>
                 </div>
             </div>

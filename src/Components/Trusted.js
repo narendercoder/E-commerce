@@ -7,19 +7,19 @@ function Trusted() {
       <h3>Trusted By 1000+ Companies</h3>
       <div className="brand-section-slider">
         <div className="slide">
-          <img src="./company/google.png" alt="trusted-brands" />
+          <img src="./assets/company/google.png" alt="trusted-brands" />
         </div>
         <div className="slide">
-          <img src="./company/microsoft.png" alt="trusted-brands" />
+          <img src="./assets/company/microsoft.png" alt="trusted-brands" />
         </div>
         <div className="slide">
-          <img src="./company/intel.png" alt="trusted-brands" />
+          <img src="./assets/company/intel.png" alt="trusted-brands" />
         </div>
         <div className="slide">
-          <img src="./company/dell.png" alt="trusted-brands" />
+          <img src="./assets/company/dell.png" alt="trusted-brands" />
         </div>
         <div className="slide">
-          <img src="./company/asus.png" alt="trusted-brands" />
+          <img src="./assets/company/asus.png" alt="trusted-brands" />
         </div>
       </div>
     </div>
@@ -27,6 +27,7 @@ function Trusted() {
 };
 
 const Wrapper = styled.section`
+    margin-top: 9rem;
     padding: 9rem 0;
     background-color: ${({ theme }) => theme.colors.bg};
     .brand-section {

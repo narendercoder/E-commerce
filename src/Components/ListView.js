@@ -17,7 +17,7 @@ const ListView = ({products}) => {
             <img src={image} alt={name} />
           </figure>
           <div className="card-data">
-            <h3>{name}</h3>
+            <h3 className='card-data--title'>{name}</h3>
             <p><FormatPrice price={price}/></p>
             <p>{description.slice(0, 90)}...</p>
 
@@ -86,7 +86,7 @@ const Wrapper = styled.section`
   }
   h3{
     margin: 2rem 0;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 2.4rem;
     text-transform: capitalize;
   }

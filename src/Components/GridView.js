@@ -85,6 +85,8 @@ const Wrapper = styled.section`
         align-items: center;
     }
     h3{
+       font-size: 1.8rem;
+        font-weight: 600;
         color: ${({theme})=> theme.colors.text};
         text-transform: capitalize;
     }

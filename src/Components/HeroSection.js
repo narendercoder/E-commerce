@@ -12,7 +12,7 @@ function HeroSection({ myData }) {
         <div className="grid grid-two-column">
           <div className="hero-section-data">
             <p className="intro-data">Welcome to</p>
-            <h1>{name}</h1>
+            <h1 className="title">{name}</h1>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Quibusdam magni, adipisci totam quas consequatur dignissimos
@@ -26,7 +26,7 @@ function HeroSection({ myData }) {
           <div className="hero-section-image">
             <figure>
               <img
-                src="products/product-38.png"
+                src="./assets/products/product-38.png"
                 alt="hero-section-img"
                 className="img-style"
               />
@@ -57,7 +57,11 @@ const Wrapper = styled.section`
     }
     .intro-data {
       margin-bottom: 0;
+      
     }
+    .title{
+        font-size: 6rem;
+      }
   }
   .herosection-image {
     width: 100%;

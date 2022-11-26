@@ -12,7 +12,7 @@ function FeatureProducts() {
   return (
     <Wrapper className="section">
        <div className="container">
-        <div className="intro-data">Check Now!</div>
+        <h4 className="intro-data">Check Now!</h4>
         <div className="common-heading">Our Feature Services</div>
         <div className="row">
             {
@@ -98,9 +98,11 @@ const Wrapper = styled.section`
         align-items: center;
     }
     h3{
+        font-size: 1.8rem;
         color: ${({theme})=> theme.colors.text};
         text-transform: capitalize;
     }
+
     .card-data--price{
         color: ${({theme})=> theme.colors.helper};
     }
