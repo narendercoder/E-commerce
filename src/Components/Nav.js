@@ -12,7 +12,7 @@ const {total_item} = useCartContext();
 
   return (
     <Navbar>
-      <div className={menuIcon ? "navbar active" : "navbar"}>
+      <div className={menuIcon ? "header-navbar active" : "header-navbar"}>
 
         <ul className="navbar-lists">
 
@@ -138,7 +138,9 @@ const Navbar = styled.nav`
     
     @media(max-width: ${({ theme }) => theme.media.mobile}){
       .mobile-navbar-btn{
-        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         z-index: 999;
         border: ${({ theme }) => theme.colors.black};
     
